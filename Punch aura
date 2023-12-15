@@ -1,0 +1,17 @@
+while PunchAura do
+for i,v in pairs(game.Players:GetChildren()) do
+                    if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
+if v.Character:FindFirstChild("HumanoidRootPart") then
+if v.Character["Right Arm"]:FindFirstChild("SelectionBox") == nil and v.Character:FindFirstChild("Highlight") == nil then
+Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                        if 25 >= Magnitude then
+game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").Punch:FireServer(v.Character,Vector3.new,0,v.Character:FindFirstChild("Head"))
+                    end
+end
+end
+end
+                end
+wait(.5)
+end
+end
+                })
